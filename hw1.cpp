@@ -45,11 +45,9 @@ void YTinit()
 	            break;
 	        }
 	    }
-		printf("%d %d\n", n, m);
+		//printf("%d %d\n", n, m);
 	}
-	cout <<YT[3][3] << endl;
-	printf("%d %d\n", n, m);
-	YTprint(op);
+	//YTprint(op);
 }
 
 void YTinsert(int x)
@@ -87,8 +85,8 @@ void YTerase()
 	while(1)
 	{
 		ti = i, tj = j;
-		if(i+1 < n && YT[i+1][j] < YT[i][j]) ti = i-1;
-		if(j+1 < m && YT[i][j+1] < YT[ti][j]) tj = j-1, ti = i;
+		if(i+1 < n && YT[i+1][j] < YT[i][j]) ti = i+1;
+		if(j+1 < m && YT[i][j+1] < YT[ti][j]) tj = j+1, ti = i;
 		if(i == ti && j == tj) return;
 		int tmp = YT[i][j];
 		YT[i][j] = YT[ti][tj];
@@ -103,16 +101,16 @@ int main()
 	while(kase--)
 	{
 		scanf("%d", &op);
+		string line;
+		getline(cin, line); // remove \n
 		if(op == 1)
 		{
-			string line;
-			getline(cin, line); // remove \n
 			getline(cin, line);
 			istringstream iss(line);
 			sz = 0;
 			while (iss >> a[sz++]) {}
 			--sz; //remove \n
-			for(int i = 0; i < sz; i++) cout << a[i] << ((i == sz-1) ? '\n' : ' ');
+			//for(int i = 0; i < sz; i++) cout << a[i] << ((i == sz-1) ? '\n' : ' ');
 			YTinit();
 			for(int i = 0 ; i < sz ; i++) YTinsert(a[i]);
 		} else {
@@ -120,6 +118,7 @@ int main()
 			YTerase();
 		}
 		YTprint(op);
+		cout << endl;
 	}
 }
 
