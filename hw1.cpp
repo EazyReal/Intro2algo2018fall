@@ -75,8 +75,8 @@ void YTerase()
 {
 	int i, j, ti, tj;
 	i = n - 1;
+	min_v = YT[0][0];
 	for(j = 0 ; j < m ; j++ ) if(YT[i][j] == INF) {
-		min_v = YT[0][0];
 		YT[0][0] = YT[i][j-1];
 		YT[i][j-1] = INF;
 	}
@@ -131,5 +131,9 @@ int main()
 5 9 x x
 x x x x
 
-
+2
+2 3 12 14
+4 8 16 x
+5 9 x x
+x x x x
 */
