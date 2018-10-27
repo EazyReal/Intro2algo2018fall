@@ -101,8 +101,13 @@ void YTerase()
 int main()
 {
 	if (FILE_IO){
-		freopen("itput.txt", "r", stdin);
+		freopen("input.txt", "r", stdin);
 		freopen("output.txt", "w", stdout);
+		//std::ifstream in("input.txt");
+		//auto cinbuf = std::cin.rdbuf(in.rdbuf());
+		//std::ofstream out("output.txt");
+		//auto coutbuf = std::cout.rdbuf(out.rdbuf());
+		//cout << "fileio" << endl;
 	}
 
 	scanf("%d", &kase);
@@ -139,7 +144,6 @@ int main()
 4 8 16 x
 5 9 x x
 x x x x
-
 2
 2 3 12 14
 4 8 16 x
